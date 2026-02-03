@@ -1,20 +1,8 @@
+import { store } from '../../job-store';
+
 export const runtime = 'nodejs';
 
 type JobStatus = 'queued' | 'processing' | 'done' | 'failed';
-
-type Job = {
-  id: string;
-  created_at_ms: number;
-  scale: 2 | 4;
-};
-
-declare global {
-  // eslint-disable-next-line no-var
-  var __IMGHANCER_JOB_STORE__: Map<string, Job> | undefined;
-}
-
-const store = globalThis.__IMGHANCER_JOB_STORE__ ?? new Map<string, Job>();
-globalThis.__IMGHANCER_JOB_STORE__ = store;
 
 function computeStatus(createdAtMs: number): {
   status: JobStatus;
