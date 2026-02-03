@@ -1,0 +1,495 @@
+{
+  "header": {
+    "id": "header",
+    "brand": {
+      "title": "imghancer",
+      "logo": {
+        "src": "/logo.png",
+        "alt": "imghancer"
+      },
+      "url": "/"
+    },
+    "nav": {
+      "items": []
+    },
+    "buttons": [],
+    "user_nav": {
+      "show_name": true,
+      "show_credits": true,
+      "show_sign_out": true,
+      "items": [
+        {
+          "title": "账单",
+          "url": "/settings/billing",
+          "icon": "CreditCard"
+        },
+        {
+          "title": "活动",
+          "url": "/activity",
+          "icon": "Activity"
+        }
+      ]
+    },
+    "show_sign": true,
+    "show_theme": true,
+    "show_locale": true
+  },
+  "hero": {
+    "id": "hero",
+    "title": "用 imghancer 一站式生成你想要的内容",
+    "highlight_text": "imghancer",
+    "description": "imghancer 是一个支持图片、文本、音乐、视频与聊天的 AI 多功能生成平台。<br/>从灵感草稿到可上线的成品内容，在一个地方统一控制风格、质量与工作流。",
+    "announcement": {
+      "badge": "全新",
+      "title": "🎉 imghancer 正式上线",
+      "url": "/pricing"
+    },
+    "tip": "🎯 专为图片、文本、音乐、视频与聊天等多种场景深度优化的 AI 生成工作流",
+    "buttons": [
+      {
+        "title": "立即开始",
+        "icon": "Zap",
+        "url": "/pricing",
+        "target": "_self",
+        "variant": "default"
+      },
+      {
+        "title": "阅读文档",
+        "icon": "BookOpenText",
+        "url": "/docs",
+        "target": "_blank",
+        "variant": "outline"
+      }
+    ],
+    "show_avatars": true,
+    "avatars_tip": "999+ 用户正在使用 imghancer",
+    "show_award": false,
+    "image": {
+      "src": "/imgs/features/admin.png",
+      "alt": "hero"
+    },
+    "image_invert": {
+      "src": "/imgs/features/admin-dark.png",
+      "alt": "hero"
+    }
+  },
+  "logos": {
+    "title": "由现代 AI 与 Web 技术栈驱动",
+    "items": [
+      {
+        "title": "Next.js",
+        "image": {
+          "src": "/imgs/logos/nextjs.svg",
+          "alt": "Next.js"
+        }
+      },
+      {
+        "title": "React",
+        "image": {
+          "src": "/imgs/logos/react.svg",
+          "alt": "React"
+        }
+      },
+      {
+        "title": "TailwindCSS",
+        "image": {
+          "src": "/imgs/logos/tailwindcss.svg",
+          "alt": "TailwindCSS"
+        }
+      },
+      {
+        "title": "Shadcn/UI",
+        "image": {
+          "src": "/imgs/logos/shadcn.svg",
+          "alt": "Shadcn/UI"
+        }
+      },
+      {
+        "title": "Vercel",
+        "image": {
+          "src": "/imgs/logos/vercel.svg",
+          "alt": "Vercel"
+        }
+      }
+    ]
+  },
+  "introduce": {
+    "id": "introduce",
+    "title": "什么是 imghancer？",
+    "label": "产品简介",
+    "description": "imghancer 是一款为创作者、设计师、营销团队和开发者打造的 AI 多功能生成平台，支持图片、文本、音乐、视频与聊天等多种创作场景，兼顾效率、质量与可控性。",
+    "image": {
+      "src": "/imgs/features/landing-page.png",
+      "alt": "introduce"
+    },
+    "items": [
+      {
+        "title": "细粒度画面控制",
+        "description": "从文案到参数，精准控制画面焦点、构图、光线、机位、色彩分级，让生成结果更贴近脑海中的画面。",
+        "icon": "RiNextjsFill",
+        "image": {
+          "src": "/imgs/features/1.png",
+          "alt": "introduce"
+        }
+      },
+      {
+        "title": "高分辨率输出",
+        "description": "支持 2K / 4K 级别高清图片，满足广告投放、海报、演示文稿等多种高质量输出场景。",
+        "icon": "RiDatabase2Line",
+        "image": {
+          "src": "/imgs/features/2.png",
+          "alt": "introduce"
+        }
+      },
+      {
+        "title": "可读性极佳的文字渲染",
+        "description": "在图片中渲染清晰可读的多语言文字，适合海报、邀请函、Banner、封面等场景。",
+        "icon": "RiCloudyFill",
+        "image": {
+          "src": "/imgs/features/3.png",
+          "alt": "introduce"
+        }
+      },
+      {
+        "title": "多图融合与风格保持",
+        "description": "支持多张参考图无缝融合，在复杂场景中保持角色、风格与布局的一致性。",
+        "icon": "RiRobot2Line",
+        "image": {
+          "src": "/imgs/features/4.png",
+          "alt": "introduce"
+        }
+      }
+    ]
+  },
+  "benefits": {
+    "id": "benefits",
+    "title": "为什么选择 imghancer",
+    "label": "产品优势",
+    "description": "从灵感探索到成品交付，imghancer 让每一次 AI 生成都兼具质量、效率与可控性。",
+    "items": [
+      {
+        "title": "分钟级产出成品图",
+        "description": "无需繁琐修图流程，几分钟就能完成适合上线投放的视觉物料，大幅提升产能。",
+        "icon": "RiNextjsFill",
+        "image": {
+          "src": "/imgs/features/user-billing.png",
+          "alt": "benefits"
+        }
+      },
+      {
+        "title": "整套项目风格统一",
+        "description": "借助参考图与风格预设，让整套 KV、角色形象、品牌视觉在不同物料中保持高度一致。",
+        "icon": "RiClapperboardAiLine",
+        "image": {
+          "src": "/imgs/features/admin-settings.png",
+          "alt": "benefits"
+        }
+      },
+      {
+        "title": "为真实业务而设计",
+        "description": "同时兼顾创意团队与开发者需求，提供稳定 API、可预测输出与企业级安全策略。",
+        "icon": "RiCodeFill",
+        "image": {
+          "src": "/imgs/features/landing-page.png",
+          "alt": "benefits"
+        }
+      }
+    ]
+  },
+  "usage": {
+    "id": "usage",
+    "title": "三步用 imghancer 生成高质量内容",
+    "description": "简单几步，从灵感到可以交付的作品：",
+    "image": {
+      "src": "/imgs/features/1.png",
+      "alt": "usage"
+    },
+    "image_position": "left",
+    "text_align": "center",
+    "items": [
+      {
+        "title": "用自然语言描述你想要的画面",
+        "description": "用自然语言写下需求，可以是图片、文案、音乐、视频创意或聊天场景，让 imghancer 帮你生成。",
+        "image": {
+          "src": "/imgs/features/5.png",
+          "alt": "usage"
+        }
+      },
+      {
+        "title": "通过控制项快速微调",
+        "description": "在界面中调节焦点、光线、机位与色调，让画面一步步贴近品牌与创意方向。",
+        "image": {
+          "src": "/imgs/features/6.png",
+          "alt": "usage"
+        }
+      },
+      {
+        "title": "加入文字与细节",
+        "description": "在图片中直接生成清晰可读的标题、副本与多语言文字，同时补充 Logo、构图细节。",
+        "image": {
+          "src": "/imgs/features/7.png",
+          "alt": "usage"
+        }
+      },
+      {
+        "title": "导出或通过 API 集成",
+        "description": "直接下载图片，或通过 API 接入到你的产品、工作流与内部工具中。",
+        "image": {
+          "src": "/imgs/features/8.png",
+          "alt": "usage"
+        }
+      }
+    ]
+  },
+  "features": {
+    "id": "features",
+    "title": "imghancer 核心能力",
+    "description": "围绕质量、可控性与安全性，为你的多模态创作提供完整能力矩阵。",
+    "items": [
+      {
+        "title": "高级图片生成模型",
+        "description": "支持多种视觉风格与表现形式，兼顾写实、插画与风格化等多种输出需求。",
+        "icon": "RiNextjsFill"
+      },
+      {
+        "title": "Gemini 3 Pro image 集成",
+        "description": "结合强大的世界知识与场景理解能力，生成更符合真实语境的画面。",
+        "icon": "RiKey2Fill"
+      },
+      {
+        "title": "图片内文字生成",
+        "description": "在图片内部生成清晰、可读的多语言文字，适合封面、邀请函、广告 Banner 等场景。",
+        "icon": "RiDatabase2Line"
+      },
+      {
+        "title": "多图融合与角色保持",
+        "description": "支持多张输入图片进行融合，保持角色、场景与视觉风格在系列创作中的统一。",
+        "icon": "RiCloudy2Fill"
+      },
+      {
+        "title": "安全与合规防护",
+        "description": "内置内容安全策略与过滤机制，在保持创造力的同时降低违规与风险输出。",
+        "icon": "RiBarChart2Line"
+      },
+      {
+        "title": "面向开发者的 API",
+        "description": "通过简单易用的 API 与 SDK，将 imghancer 的多模态 AI 生成能力接入你的产品与内部系统。",
+        "icon": "RiRobot2Line"
+      }
+    ]
+  },
+  "stats": {
+    "id": "stats",
+    "title": "创作者信任 imghancer",
+    "description": "因为它在可控性、质量与效率之间找到了平衡。",
+    "items": [
+      {
+        "title": "1K+",
+        "description": "位创作者已在体验"
+      },
+      {
+        "title": "10K+",
+        "description": "张生成图片"
+      },
+      {
+        "title": "4K",
+        "description": "最高输出分辨率"
+      }
+    ]
+  },
+  "testimonials": {
+    "id": "testimonials",
+    "title": "他们这样评价 imghancer",
+    "description": "设计师、营销团队与开发者，用 imghancer 在几分钟内完成以往需要数小时的创作工作。",
+    "items": [
+      {
+        "name": "David Chen",
+        "role": "创意工作室艺术总监",
+        "quote": "imghancer 终于让我们可以真正『锁定风格』。整套 Campaign 的角色与画面可以保持统一，不用每张图重头写提示词。",
+        "image": {
+          "src": "/imgs/avatars/1.png",
+          "alt": "david"
+        }
+      },
+      {
+        "name": "Rachel Kim",
+        "role": "效果广告负责人",
+        "quote": "在一个工具里同时调整光线、机位和文案，对我们广告与社媒团队来说是巨大的效率飞跃，创意测试速度翻了好几倍。",
+        "image": {
+          "src": "/imgs/avatars/2.png",
+          "alt": "rachel"
+        }
+      },
+      {
+        "name": "Marcus Thompson",
+        "role": "独立开发者",
+        "quote": "把 imghancer 的 API 集成到我的产品中非常顺滑，用户可以在产品里直接生成并细调内容，而不是跳转到外部工具。",
+        "image": {
+          "src": "/imgs/avatars/3.png",
+          "alt": "marcus"
+        }
+      },
+      {
+        "name": "Sofia Garcia",
+        "role": "品牌设计师",
+        "quote": "以前在图里做文字几乎是反人类，现在用 imghancer 可以直接生成带清晰标题和排版的海报、邀请函。",
+        "image": {
+          "src": "/imgs/avatars/4.png",
+          "alt": "sofia"
+        }
+      },
+      {
+        "name": "James Wilson",
+        "role": "产品负责人",
+        "quote": "我们用 imghancer 原型设计视觉与内容创意，享受接近生产级的质量表现，再把最好的一批直接用于生产场景。",
+        "image": {
+          "src": "/imgs/avatars/5.png",
+          "alt": "james"
+        }
+      },
+      {
+        "name": "Anna Zhang",
+        "role": "内容创作者",
+        "quote": "现在从脑海中的灵感到可以直接发布的封面图，只需要几分钟，感觉像随时有一个设计团队在身边。",
+        "image": {
+          "src": "/imgs/avatars/6.png",
+          "alt": "anna"
+        }
+      }
+    ]
+  },
+  "faq": {
+    "id": "faq",
+    "title": "关于 imghancer 的常见问题",
+    "description": "对 imghancer 或 AI 多功能生成相关能力还有疑问？这里先回答一些高频问题。",
+    "tip": "没有找到想要的答案？请邮件联系 <a href='mailto:support@your-domain.com' class='text-primary font-medium hover:underline'>support@your-domain.com</a>",
+    "items": [
+      {
+        "question": "imghancer 是什么？",
+        "answer": "imghancer 是一款 AI 多功能生成平台，帮助你在一个地方完成图片、文本、音乐、视频与聊天等多种内容创作，重点提供高质量、强可控的生成体验，适用于真实业务场景。"
+      },
+      {
+        "question": "不会设计或不会写代码也能用吗？",
+        "answer": "可以。只要能用自然语言描述需求，就可以通过 imghancer 生成内容。设计师与开发者还可以进一步使用参考素材、API 与高级参数搭建更复杂的工作流。"
+      },
+      {
+        "question": "imghancer 适合生成哪些类型的内容？",
+        "answer": "包括但不限于产品图、社媒配图、广告 Banner、长图海报、概念设计、分镜草图、文案内容、简单音乐片段、视频创意脚本以及聊天对话等。借助多图融合与风格控制能力，还可以在系列创作中保持角色与风格统一。"
+      },
+      {
+        "question": "生成一张图大概需要多久？",
+        "answer": "大部分生成请求会在数秒内完成，你可以快速通过调整提示词、控制参数和分辨率来反复迭代。"
+      },
+      {
+        "question": "imghancer 是否安全、合规？",
+        "answer": "是的。我们在模型之上增加了内容安全过滤和策略约束，在尽可能释放创意空间的同时，降低不当或有风险内容的生成概率。"
+      },
+      {
+        "question": "开发者可以把 imghancer 接入自己的产品吗？",
+        "answer": "当然可以。我们提供 API 与 SDK，帮助你把 imghancer 的多模态 AI 生成能力嵌入到自己的应用和内部系统中。"
+      }
+    ]
+  },
+  "cta": {
+    "id": "cta",
+    "title": "立即开始使用 imghancer",
+    "description": "从一个想法，到一份可以直接上线的内容，只差几分钟。",
+    "buttons": [
+      {
+        "title": "体验 imghancer",
+        "url": "/pricing",
+        "target": "_blank",
+        "icon": "Zap"
+      },
+      {
+        "title": "查看使用文档",
+        "url": "/docs",
+        "target": "_blank",
+        "variant": "outline",
+        "icon": "BookOpenText"
+      }
+    ]
+  },
+  "subscribe": {
+    "id": "subscribe",
+    "title": "订阅 imghancer 更新",
+    "description": "第一时间获取 imghancer 与 AI 多功能生成相关的产品更新、最佳实践与提示词灵感。",
+    "submit": {
+      "input": {
+        "placeholder": "输入邮箱"
+      },
+      "button": {
+        "title": "订阅"
+      },
+      "action": "/api/subscribe"
+    }
+  },
+  "footer": {
+    "id": "footer",
+    "brand": {
+      "title": "imghancer",
+      "description": "imghancer 是一个 AI 多功能生成平台，支持图片、文本、音乐、视频与聊天等多种创作能力，专注于提供可控、高质量的生成效果。",
+      "logo": {
+        "src": "/logo.png",
+        "alt": "imghancer"
+      },
+      "url": "/"
+    },
+    "nav": {
+      "items": [
+        {
+          "title": "资源",
+          "children": [
+            {
+              "title": "对话",
+              "url": "/chat",
+              "target": "_blank"
+            }
+          ]
+        }
+      ]
+    },
+    "social": {
+      "items": [
+        {
+          "title": "X",
+          "icon": "RiTwitterXFill",
+          "url": "https://x.com/your-app-name",
+          "target": "_blank"
+        },
+        {
+          "title": "Github",
+          "icon": "Github",
+          "url": "https://github.com/your-app-name",
+          "target": "_blank"
+        },
+        {
+          "title": "Discord",
+          "icon": "RiDiscordFill",
+          "url": "https://discord.gg/your-app-name",
+          "target": "_blank"
+        },
+        {
+          "title": "邮箱",
+          "icon": "Mail",
+          "url": "mailto:support@ma.com",
+          "target": "_self"
+        }
+      ]
+    },
+    "agreement": {
+      "items": [
+        {
+          "title": "隐私政策",
+          "url": "/privacy-policy"
+        },
+        {
+          "title": "服务条款",
+          "url": "/terms-of-service"
+        }
+      ]
+    },
+    "show_theme": true,
+    "show_locale": true
+  }
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <rect width="1600" height="1000" fill="#0b1220"/>
+  <rect x="120" y="160" width="640" height="680" rx="28" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+  <rect x="840" y="160" width="640" height="680" rx="28" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+  <text x="150" y="230" fill="#e5e7eb" font-size="42" font-family="ui-sans-serif, system-ui" font-weight="700">Before</text>
+  <text x="870" y="230" fill="#e5e7eb" font-size="42" font-family="ui-sans-serif, system-ui" font-weight="700">After</text>
+  <text x="800" y="920" text-anchor="middle" fill="#94a3b8" font-size="28" font-family="ui-sans-serif, system-ui">
+    Placeholder #2
+  </text>
+</svg>

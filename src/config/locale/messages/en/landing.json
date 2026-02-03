@@ -1,0 +1,583 @@
+{
+  "header": {
+    "id": "header",
+    "brand": {
+      "title": "imghancer",
+      "logo": {
+        "src": "/logo.png",
+        "alt": "imghancer"
+      },
+      "url": "/"
+    },
+    "nav": {
+      "items": []
+    },
+    "buttons": [],
+    "user_nav": {
+      "show_name": true,
+      "show_credits": true,
+      "show_sign_out": true,
+      "items": [
+        {
+          "title": "Billing",
+          "url": "/settings/billing",
+          "icon": "CreditCard"
+        },
+        {
+          "title": "Activity",
+          "url": "/activity",
+          "icon": "Activity"
+        }
+      ]
+    },
+    "show_sign": true,
+    "show_theme": false,
+    "show_locale": false
+  },
+  "hero": {
+    "id": "hero",
+    "title": "imghancer — your image toolset in one place",
+    "highlight_text": "imghancer",
+    "description": "Enhance, remove backgrounds, restore old photos, and more — a single workspace that keeps every visual sharp and consistent.",
+
+    "buttons": [],
+    "show_avatars": false,
+    "avatars_tip": "1K+ creators are using imghancer",
+    "show_award": false,
+    "image": null,
+    "image_invert": null
+  },
+  "showcases": {
+  "id": "showcases",
+  "sr_only_title": "Imghancer tool previews",
+  "title": "See what each tool can do",
+  "description": "Quick before/after previews for enhance, background removal, and photo restore.",
+  "items": [
+    {
+      "title": "Image Enhance",
+      "description": "Upscale 2×/4× for sharper, cleaner details.",
+      "url": "/enhance",
+      "target": "_self",
+      "image": {
+        "src": "/imgs/showcases/showcase1.png",
+        "alt": "Before and after example 1"
+      }
+    },
+    {
+      "title": "Background Remover",
+      "description": "Remove backgrounds in one click for clean cutouts.",
+      "url": "/background-remover",
+      "target": "_self",
+      "image": {
+        "src": "/imgs/showcases/showcase2.png",
+        "alt": "Before and after example 2"
+      }
+    },
+    {
+      "title": "Old Photo Restore",
+      "description": "Repair scratches and bring back clarity in vintage photos.",
+      "url": "/photo-restore",
+      "target": "_self",
+      "image": {
+        "src": "/imgs/showcases/showcase3.png",
+        "alt": "Before and after example 3"
+      }
+    }
+  ]
+},
+  "workflow": {
+    "id": "workflow",
+    "label": "How it works",
+    "title": "Four steps to polished images",
+    "description": "Upload a photo, choose a tool, preview the result, and download in high quality.",
+    "items": [
+      {
+        "title": "Pick the right tool",
+        "description": "Enhance, remove background, or restore old photos in one click.",
+        "image": {
+          "src": "/imgs/showcases/before-after-2.svg",
+          "alt": "Pick a tool"
+        }
+      },
+      {
+        "title": "Upload your image",
+        "description": "Drag and drop or select a file to get started.",
+        "image": {
+          "src": "/imgs/showcases/before-after-1.svg",
+          "alt": "Upload your image"
+        }
+      },
+      {
+        "title": "Preview the result",
+        "description": "Compare before and after and fine tune if needed.",
+        "image": {
+          "src": "/imgs/showcases/before-after-3.svg",
+          "alt": "Preview the result"
+        }
+      },
+      {
+        "title": "Download in high quality",
+        "description": "Export a clean, sharp image ready for use anywhere.",
+        "image": {
+          "src": "/imgs/showcases/step-4.svg",
+          "alt": "Download in high quality"
+        }
+      }
+    ]
+  },
+  "logos": {
+    "title": "Built on a modern web stack",
+    "items": [
+      {
+        "title": "Next.js",
+        "image": {
+          "src": "/imgs/logos/nextjs.svg",
+          "alt": "Next.js"
+        }
+      },
+      {
+        "title": "React",
+        "image": {
+          "src": "/imgs/logos/react.svg",
+          "alt": "React"
+        }
+      },
+      {
+        "title": "TailwindCSS",
+        "image": {
+          "src": "/imgs/logos/tailwindcss.svg",
+          "alt": "TailwindCSS"
+        }
+      },
+      {
+        "title": "Shadcn/UI",
+        "image": {
+          "src": "/imgs/logos/shadcn.svg",
+          "alt": "Shadcn/UI"
+        }
+      },
+      {
+        "title": "Vercel",
+        "image": {
+          "src": "/imgs/logos/vercel.svg",
+          "alt": "Vercel"
+        }
+      }
+    ]
+  },
+  "introduce": {
+    "id": "introduce",
+    "title": "What is imghancer?",
+    "label": "Introduction",
+    "description": "imghancer is a multi-modal AI creation platform for creators, designers, marketing teams, and developers. Generate images, text, music, video, and chat in one place—with high quality and strong controllability.",
+    "image": {
+      "src": "/imgs/features/landing-page.png",
+      "alt": "introduce"
+    },
+    "items": [
+      {
+        "title": "Fine‑grained visual control",
+        "description": "Control focus, composition, lighting, camera, and color grading—so results match what you have in mind.",
+        "icon": "RiNextjsFill",
+        "image": {
+          "src": "/imgs/features/1.png",
+          "alt": "introduce"
+        }
+      },
+      {
+        "title": "High‑resolution output",
+        "description": "Generate crisp 2K/4K images for ads, posters, presentations, and more.",
+        "icon": "RiDatabase2Line",
+        "image": {
+          "src": "/imgs/features/2.png",
+          "alt": "introduce"
+        }
+      },
+      {
+        "title": "Readable text rendering",
+        "description": "Render clear, readable multi-language text inside images—perfect for banners, covers, and invitations.",
+        "icon": "RiCloudyFill",
+        "image": {
+          "src": "/imgs/features/3.png",
+          "alt": "introduce"
+        }
+      },
+      {
+        "title": "Multi‑image fusion & style consistency",
+        "description": "Blend multiple reference images while keeping character and style consistent across a series.",
+        "icon": "RiRobot2Line",
+        "image": {
+          "src": "/imgs/features/4.png",
+          "alt": "introduce"
+        }
+      }
+    ]
+  },
+  "benefits": {
+    "id": "benefits",
+    "title": "Why imghancer",
+    "label": "Benefits",
+    "description": "From inspiration to deliverables, imghancer balances quality, speed, and control.",
+    "items": [
+      {
+        "title": "Production‑ready results in minutes",
+        "description": "Skip tedious iterations—create assets you can publish fast and boost throughput.",
+        "icon": "RiNextjsFill",
+        "image": {
+          "src": "/imgs/features/user-billing.png",
+          "alt": "benefits"
+        }
+      },
+      {
+        "title": "Consistent visual identity",
+        "description": "Use reference images and style presets to keep characters and brand visuals coherent across materials.",
+        "icon": "RiClapperboardAiLine",
+        "image": {
+          "src": "/imgs/features/admin-settings.png",
+          "alt": "benefits"
+        }
+      },
+      {
+        "title": "Designed for real workflows",
+        "description": "Works for creative teams and developers alike—with predictable outputs, APIs, and enterprise-friendly safety.",
+        "icon": "RiCodeFill",
+        "image": {
+          "src": "/imgs/features/landing-page.png",
+          "alt": "benefits"
+        }
+      }
+    ]
+  },
+  "usage": {
+    "id": "usage",
+    "title": "Create high‑quality content in 3 steps",
+    "description": "A simple workflow from idea to publishable output:",
+    "image": {
+      "src": "/imgs/features/1.png",
+      "alt": "usage"
+    },
+    "image_position": "left",
+    "text_align": "center",
+    "items": [
+      {
+        "title": "Pick a mode",
+        "description": "Choose what you want to generate: image, text, music, video, or chat.",
+        "image": {
+          "src": "/imgs/features/5.png",
+          "alt": "usage"
+        }
+      },
+      {
+        "title": "Describe what you want",
+        "description": "Use natural language, references, and parameters to guide style, composition, and details.",
+        "image": {
+          "src": "/imgs/features/6.png",
+          "alt": "usage"
+        }
+      },
+      {
+        "title": "Iterate and refine",
+        "description": "Adjust prompts and controls, upscale, and export when it looks right.",
+        "image": {
+          "src": "/imgs/features/7.png",
+          "alt": "usage"
+        }
+      },
+      {
+        "title": "Use it anywhere",
+        "description": "Download and publish, or integrate via API for in-product generation.",
+        "image": {
+          "src": "/imgs/features/8.png",
+          "alt": "usage"
+        }
+      }
+    ]
+  },
+  "features": {
+    "id": "features",
+    "title": "Core capabilities",
+    "description": "A complete capability matrix for multi-modal creation—quality, control, and safety.",
+    "items": [
+      {
+        "title": "Advanced image generation",
+        "description": "Supports multiple styles and aesthetics—photoreal, illustration, and stylized outputs.",
+        "icon": "RiNextjsFill"
+      },
+      {
+        "title": "Gemini 3 Pro image integration",
+        "description": "Better scene understanding and world knowledge for more contextually accurate visuals.",
+        "icon": "RiKey2Fill"
+      },
+      {
+        "title": "Text in images",
+        "description": "Generate clear, readable multi-language text inside images for covers, invites, and banners.",
+        "icon": "RiDatabase2Line"
+      },
+      {
+        "title": "Multi-image fusion & character consistency",
+        "description": "Blend multiple inputs while keeping characters, scenes, and style consistent across a series.",
+        "icon": "RiCloudy2Fill"
+      },
+      {
+        "title": "Safety & compliance",
+        "description": "Built-in content safety strategies to reduce risky or policy-violating generations.",
+        "icon": "RiBarChart2Line"
+      },
+      {
+        "title": "Developer‑friendly API",
+        "description": "Simple APIs and SDKs to bring imghancer’s multi-modal generation into your product and internal tools.",
+        "icon": "RiRobot2Line"
+      }
+    ]
+  },
+  "stats": {
+    "id": "stats",
+    "title": "Creators trust imghancer",
+    "description": "Because it balances controllability, quality, and speed.",
+    "items": [
+      {
+        "title": "1K+",
+        "description": "Creators"
+      },
+      {
+        "title": "10K+",
+        "description": "Images generated"
+      },
+      {
+        "title": "4K",
+        "description": "Max output resolution"
+      }
+    ]
+  },
+  "testimonials": {
+    "id": "testimonials",
+    "title": "Loved by teams shipping visuals fast",
+    "description": "Creators, marketers, and product teams use imghancer to clean up images without slowing down.",
+    "items": [
+      {
+        "name": "David Chen",
+        "role": "Creative Director",
+        "quote": "The enhancement is subtle and clean. Details are back, but it never looks over‑processed.",
+        "image": {
+          "src": "/imgs/avatars/1.png",
+          "alt": "david"
+        }
+      },
+      {
+        "name": "Rachel Kim",
+        "role": "Performance Marketing",
+        "quote": "We can prep ad visuals in minutes now—background removal and quick polish save hours.",
+        "image": {
+          "src": "/imgs/avatars/2.png",
+          "alt": "rachel"
+        }
+      },
+      {
+        "name": "Marcus Thompson",
+        "role": "Indie Builder",
+        "quote": "The before/after preview makes it easy to pick the right tool without guessing.",
+        "image": {
+          "src": "/imgs/avatars/3.png",
+          "alt": "marcus"
+        }
+      },
+      {
+        "name": "Sofia Garcia",
+        "role": "Brand Designer",
+        "quote": "Old photo restore is my favorite—scratches fade and the image feels new again.",
+        "image": {
+          "src": "/imgs/avatars/4.png",
+          "alt": "sofia"
+        }
+      },
+      {
+        "name": "James Wilson",
+        "role": "Product Lead",
+        "quote": "We keep product screenshots consistent across releases without a full design pass.",
+        "image": {
+          "src": "/imgs/avatars/5.png",
+          "alt": "james"
+        }
+      },
+      {
+        "name": "Anna Zhang",
+        "role": "Content Creator",
+        "quote": "Fast, reliable, and the outputs are crisp. It feels built for daily use.",
+        "image": {
+          "src": "/imgs/avatars/6.png",
+          "alt": "anna"
+        }
+      }
+    ]
+  },
+  "faq": {
+    "id": "faq",
+    "title": "imghancer FAQs",
+    "description": "Get quick answers to the most common questions about imghancer.",
+    "tip": "",
+    "items": [
+      {
+        "question": "How do I enhance a photo with imghancer?",
+        "answer": "Upload an image, choose the tool you need, preview the before/after, then download the result."
+      },
+      {
+        "question": "Can imghancer fix blurry or low-resolution photos?",
+        "answer": "Yes. The enhance tool sharpens edges and restores detail while keeping textures natural."
+      },
+      {
+        "question": "Can I remove backgrounds or restore old photos?",
+        "answer": "Yes. Background removal and photo restore are separate tools designed for those tasks."
+      },
+      {
+        "question": "What image types do you support?",
+        "answer": "Common formats like JPG, PNG, and WEBP are supported."
+      },
+      {
+        "question": "Is imghancer free to use?",
+        "answer": "You can try it for free, with upgrades available for higher limits and faster processing."
+      },
+      {
+        "question": "Do I need to install anything?",
+        "answer": "No. imghancer runs in the browser, so you can start immediately."
+      }
+    ]
+  },
+  "cta": {
+    "id": "cta",
+    "title": "Start enhancing with imghancer",
+    "description": "Upgrade your images in minutes with simple, focused tools.",
+    "buttons": [
+      {
+        "title": "Try Enhance",
+        "url": "/enhance",
+        "target": "_self",
+        "icon": "Zap"
+      },
+      {
+        "title": "Read the docs",
+        "url": "/docs",
+        "target": "_self",
+        "variant": "outline",
+        "icon": "BookOpenText"
+      }
+    ]
+  },
+  "subscribe": {
+    "id": "subscribe",
+    "title": "Subscribe to our newsletter",
+    "description": "Get product updates, best practices, and prompt inspiration for imghancer.",
+    "submit": {
+      "input": {
+        "placeholder": "Enter your email"
+      },
+      "button": {
+        "title": "Subscribe"
+      },
+      "action": "/api/subscribe"
+    }
+  },
+  "footer": {
+    "id": "footer",
+    "brand": {
+      "title": "imghancer",
+      "description": "imghancer is an image toolset for enhancing, removing backgrounds, and restoring old photos—built for speed and clarity.",
+      "logo": {
+        "src": "/logo.png",
+        "alt": "imghancer"
+      },
+      "url": "/"
+    },
+    "nav": {
+      "items": [
+        {
+          "title": "Tools",
+          "children": [
+            {
+              "title": "Enhance",
+              "url": "/enhance",
+              "target": "_self"
+            },
+            {
+              "title": "Background Remover",
+              "url": "/background-remover",
+              "target": "_self"
+            },
+            {
+              "title": "Image Compressor",
+              "url": "/compress",
+              "target": "_self"
+            },
+            {
+              "title": "Portrait Retouch",
+              "url": "/portrait-retouch",
+              "target": "_self"
+            },
+            {
+              "title": "Denoise",
+              "url": "/denoise",
+              "target": "_self"
+            },
+            {
+              "title": "Sharpen",
+              "url": "/sharpen",
+              "target": "_self"
+            },
+            {
+              "title": "Old Photo Restore",
+              "url": "/photo-restore",
+              "target": "_self"
+            },
+            {
+              "title": "Batch Enhance",
+              "url": "/batch-enhance",
+              "target": "_self"
+            }
+          ]
+        }
+      ]
+    },
+    "social": {
+      "items": [
+        {
+          "title": "X",
+          "icon": "RiTwitterXFill",
+          "url": "https://x.com/your-app-name",
+          "target": "_blank"
+        },
+        {
+          "title": "Github",
+          "icon": "Github",
+          "url": "https://github.com/your-app-name",
+          "target": "_blank"
+        },
+        {
+          "title": "Discord",
+          "icon": "RiDiscordFill",
+          "url": "https://discord.gg/your-app-name",
+          "target": "_blank"
+        },
+        {
+          "title": "Email",
+          "icon": "Mail",
+          "url": "mailto:support@your-domain.com",
+          "target": "_self"
+        }
+      ]
+    },
+    "agreement": {
+      "items": [
+        {
+          "title": "Privacy Policy",
+          "url": "/privacy-policy"
+        },
+        {
+          "title": "Terms of Service",
+          "url": "/terms-of-service"
+        }
+      ]
+    },
+    "show_theme": false,
+    "show_locale": false,
+    "show_built_with": false
+  }
+}
