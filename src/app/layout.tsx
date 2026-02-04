@@ -11,6 +11,14 @@ import { getAffiliateService } from '@/shared/services/affiliate';
 import { getAnalyticsService } from '@/shared/services/analytics';
 import { getCustomerService } from '@/shared/services/customer_service';
 
+export const metadata = {
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon-128x128.ico',
+  },
+};
+
 const notoSansMono = Noto_Sans_Mono({
   subsets: ['latin'],
   variable: '--font-sans',
