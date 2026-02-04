@@ -88,6 +88,11 @@ export function getMetadata(
       alternates: {
         canonical: canonicalUrl,
       },
+      icons: {
+        icon: '/favicon.ico',
+        shortcut: '/favicon.ico',
+        apple: '/favicon-128x128.ico',
+      },
 
       openGraph: {
         type: 'website',
