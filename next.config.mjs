@@ -28,6 +28,40 @@ const nextConfig = {
   async redirects() {
     return [];
   },
+  async headers() {
+    const noIndexHeaders = [
+      {
+        key: 'X-Robots-Tag',
+        value: 'noindex, nofollow',
+      },
+    ];
+
+    return [
+      // Admin
+      { source: '/admin/:path*', headers: noIndexHeaders },
+      { source: '/:locale(en|zh)/admin/:path*', headers: noIndexHeaders },
+
+      // Settings
+      { source: '/settings/:path*', headers: noIndexHeaders },
+      { source: '/:locale(en|zh)/settings/:path*', headers: noIndexHeaders },
+
+      // Activity
+      { source: '/activity/:path*', headers: noIndexHeaders },
+      { source: '/:locale(en|zh)/activity/:path*', headers: noIndexHeaders },
+
+      // Chat
+      { source: '/chat/:path*', headers: noIndexHeaders },
+      { source: '/:locale(en|zh)/chat/:path*', headers: noIndexHeaders },
+
+      // Auth
+      { source: '/sign-in', headers: noIndexHeaders },
+      { source: '/:locale(en|zh)/sign-in', headers: noIndexHeaders },
+      { source: '/sign-up', headers: noIndexHeaders },
+      { source: '/:locale(en|zh)/sign-up', headers: noIndexHeaders },
+      { source: '/no-permission', headers: noIndexHeaders },
+      { source: '/:locale(en|zh)/no-permission', headers: noIndexHeaders },
+    ];
+  },
   turbopack: {
     resolveAlias: {
       // fs: {

@@ -2,12 +2,14 @@
 import EnhanceClient from './EnhanceClient';
 import { Link } from '@/core/i18n/navigation';
 import { Button } from '@/shared/components/ui/button';
+import { getMetadata } from '@/shared/lib/seo';
 import { CompareSlider, FAQ } from '@/themes/default/blocks';
 
-export const metadata = {
-  title: 'Enhance — imghancer',
+export const generateMetadata = getMetadata({
+  title: 'Enhance Images Online: 2x/4x Upscale | Imghancer',
   description: 'Upscale and enhance images online with imghancer.',
-};
+  canonicalUrl: '/enhance',
+});
 
 export default function EnhancePage() {
   return (
