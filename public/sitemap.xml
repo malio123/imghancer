@@ -1,15 +1,55 @@
 <?xml version='1.0' encoding='utf-8' standalone='yes'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://your-domain.com/</loc>
-    <lastmod>2025-11-15T10:00:00+00:00</lastmod>
+    <loc>https://imghancer.com/</loc>
+    <lastmod>2026-02-06</lastmod>
   </url>
   <url>
-    <loc>https://your-domain.com/blog</loc>
-    <lastmod>2025-11-15T10:00:00+00:00</lastmod>
+    <loc>https://imghancer.com/pricing</loc>
+    <lastmod>2026-02-06</lastmod>
   </url>
   <url>
-    <loc>https://your-domain.com/showcases</loc>
-    <lastmod>2025-11-15T10:00:00+00:00</lastmod>
+    <loc>https://imghancer.com/showcases</loc>
+    <lastmod>2026-02-06</lastmod>
+  </url>
+  <url>
+    <loc>https://imghancer.com/blog</loc>
+    <lastmod>2026-02-06</lastmod>
+  </url>
+  <url>
+    <loc>https://imghancer.com/docs</loc>
+    <lastmod>2026-02-06</lastmod>
+  </url>
+  <url>
+    <loc>https://imghancer.com/enhance</loc>
+    <lastmod>2026-02-06</lastmod>
+  </url>
+  <url>
+    <loc>https://imghancer.com/photo-restore</loc>
+    <lastmod>2026-02-06</lastmod>
+  </url>
+  <url>
+    <loc>https://imghancer.com/background-remover</loc>
+    <lastmod>2026-02-06</lastmod>
+  </url>
+  <url>
+    <loc>https://imghancer.com/ai-image-generator</loc>
+    <lastmod>2026-02-06</lastmod>
+  </url>
+  <url>
+    <loc>https://imghancer.com/ai-video-generator</loc>
+    <lastmod>2026-02-06</lastmod>
+  </url>
+  <url>
+    <loc>https://imghancer.com/ai-music-generator</loc>
+    <lastmod>2026-02-06</lastmod>
+  </url>
+  <url>
+    <loc>https://imghancer.com/ai-audio-generator</loc>
+    <lastmod>2026-02-06</lastmod>
+  </url>
+  <url>
+    <loc>https://imghancer.com/ai-chatbot</loc>
+    <lastmod>2026-02-06</lastmod>
   </url>
 </urlset>
