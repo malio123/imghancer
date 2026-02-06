@@ -183,7 +183,7 @@ export function Showcases({
       <div className="container">
         <div className="mx-auto mb-10 max-w-3xl text-center">
           {showcases.sr_only_title && (
-            <h1 className="sr-only">{showcases.sr_only_title}</h1>
+            <h2 className="sr-only">{showcases.sr_only_title}</h2>
           )}
           <div className="mb-4 flex items-center justify-center gap-2">
             <Badge variant="secondary">Before / After</Badge>

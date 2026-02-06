@@ -330,7 +330,7 @@ export function Pricing({
     >
       <div className="mx-auto mb-12 px-4 text-center md:px-8">
         {pricing.sr_only_title && (
-          <h1 className="sr-only">{pricing.sr_only_title}</h1>
+          <h2 className="sr-only">{pricing.sr_only_title}</h2>
         )}
         <h2 className="mb-6 text-3xl font-bold text-pretty lg:text-4xl">
           {pricing.title}
