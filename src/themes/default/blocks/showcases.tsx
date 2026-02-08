@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
 
 import { Link } from '@/core/i18n/navigation';
@@ -38,6 +38,8 @@ export function CompareSlider({
   alt: string;
 }) {
   const wrapRef = useRef<HTMLDivElement | null>(null);
+  const movedRef = useRef(false);
+  const resetTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [pct, setPct] = useState(50);
   const [dragging, setDragging] = useState(false);
   const [hovering, setHovering] = useState(false);
@@ -53,34 +55,72 @@ export function CompareSlider({
     setPct(clamp(p));
   };
 
+  const clearResetTimer = () => {
+    if (!resetTimerRef.current) return;
+    clearTimeout(resetTimerRef.current);
+    resetTimerRef.current = null;
+  };
+
+  const scheduleAutoReset = () => {
+    clearResetTimer();
+    resetTimerRef.current = setTimeout(() => {
+      setPct(50);
+      movedRef.current = false;
+    }, 3000);
+  };
+
+  useEffect(() => {
+    return () => clearResetTimer();
+  }, []);
+
   const useBlurOverlay = beforeSrc === afterSrc;
 
   return (
     <div
       ref={wrapRef}
       className="relative aspect-[16/10] w-full cursor-ew-resize overflow-hidden rounded-2xl border bg-muted/10"
-      onMouseEnter={() => setHovering(true)}
-      onMouseDown={(e) => {
-        setFromClientX(e.clientX);
-      }}
-      onMouseMove={(e) => {
-        setFromClientX(e.clientX);
-      }}
-      onMouseUp={() => setDragging(false)}
-      onMouseLeave={() => {
-        setDragging(false);
+      onDragStart={(e) => e.preventDefault()}
+      onPointerEnter={() => setHovering(true)}
+      onPointerLeave={() => {
         setHovering(false);
-        setPct(50);
       }}
-      onTouchStart={(e) => {
+      onPointerDown={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        clearResetTimer();
+        movedRef.current = false;
         setDragging(true);
-        setFromClientX(e.touches[0]?.clientX ?? 0);
+        setFromClientX(e.clientX);
+        wrapRef.current?.setPointerCapture(e.pointerId);
       }}
-      onTouchMove={(e) => {
+      onPointerMove={(e) => {
         if (!dragging) return;
-        setFromClientX(e.touches[0]?.clientX ?? 0);
+        clearResetTimer();
+        movedRef.current = true;
+        setFromClientX(e.clientX);
       }}
-      onTouchEnd={() => setDragging(false)}
+      onPointerUp={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setDragging(false);
+        if (wrapRef.current?.hasPointerCapture(e.pointerId)) {
+          wrapRef.current.releasePointerCapture(e.pointerId);
+        }
+        scheduleAutoReset();
+      }}
+      onPointerCancel={(e) => {
+        setDragging(false);
+        if (wrapRef.current?.hasPointerCapture(e.pointerId)) {
+          wrapRef.current.releasePointerCapture(e.pointerId);
+        }
+        scheduleAutoReset();
+      }}
+      onClickCapture={(e) => {
+        if (!movedRef.current) return;
+        e.preventDefault();
+        e.stopPropagation();
+        movedRef.current = false;
+      }}
     >
       {/* After (base) */}
       <Image
@@ -90,6 +130,7 @@ export function CompareSlider({
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 50vw"
         className="object-cover"
         priority={false}
+        draggable={false}
       />
 
       {/* Before (clipped) */}
@@ -111,6 +152,7 @@ export function CompareSlider({
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 50vw"
               className="object-cover"
               priority={false}
+              draggable={false}
             />
           )}
         </div>
@@ -152,7 +194,12 @@ export function CompareSlider({
         min={2}
         max={98}
         value={pct}
-        onChange={(e) => setPct(Number(e.target.value))}
+        onChange={(e) => {
+          setPct(Number(e.target.value));
+          scheduleAutoReset();
+        }}
+        onPointerDown={() => clearResetTimer()}
+        onPointerUp={() => scheduleAutoReset()}
         className="absolute bottom-3 left-1/2 w-[65%] -translate-x-1/2 appearance-none opacity-0"
       />
     </div>

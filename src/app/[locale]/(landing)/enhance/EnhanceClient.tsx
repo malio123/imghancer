@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { Download, PencilLine, Trash2 } from 'lucide-react';
 import { toast } from 'sonner';
 
 type JobStatus = 'idle' | 'queued' | 'processing' | 'done' | 'failed';
@@ -29,6 +30,7 @@ function fileToDataUrl(file: File): Promise<string> {
 }
 
 export default function EnhanceClient() {
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [file, setFile] = useState<File | null>(null);
   const [scale, setScale] = useState<2 | 4>(2);
   const [showResult, setShowResult] = useState(false);
@@ -216,6 +218,9 @@ export default function EnhanceClient() {
 
   function reset() {
     stopPolling();
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
     setJobId(null);
     setAfterUrl(null);
     setFile(null);
@@ -226,27 +231,33 @@ export default function EnhanceClient() {
     setMetaError(null);
   }
 
-  const showProgress = status === 'queued' || status === 'processing';
+  const showProgress =
+    status === 'queued' || status === 'processing' || (status === 'done' && !afterUrl);
 
   return (
     <div className="space-y-6">
-      <div className="relative overflow-hidden rounded-2xl border border-border/50 bg-card/30 p-5">
-        <div className="flex items-center justify-between">
-          <div className="text-muted-foreground text-xs font-medium uppercase tracking-[0.2em]">
+      <div className="border-border/50 bg-card/30 relative overflow-hidden rounded-2xl border p-5">
+        <div className="flex min-h-10 items-center justify-between">
+          <div className="text-muted-foreground text-xs font-medium tracking-[0.2em] uppercase">
             Upload
           </div>
-          {file ? (
-            <button
-              onClick={reset}
-              className="text-muted-foreground hover:text-foreground text-sm font-medium"
-            >
-              Remove
-            </button>
-          ) : null}
+          <button
+            onClick={reset}
+            disabled={!file}
+            aria-hidden={!file}
+            className={[
+              'inline-flex items-center gap-2 rounded-lg border border-red-500/40 bg-red-500/10 px-3 py-2 text-sm font-semibold text-red-300 transition focus-visible:ring-2 focus-visible:ring-red-400/60 focus-visible:outline-none',
+              file ? 'hover:bg-red-500/20 opacity-100' : 'pointer-events-none opacity-0',
+            ].join(' ')}
+          >
+            <Trash2 className="h-4 w-4" />
+            Remove image
+          </button>
         </div>
 
         <label className="bg-muted/20 hover:bg-muted/30 mt-3 block cursor-pointer rounded-2xl border border-dashed p-6 transition">
           <input
+            ref={fileInputRef}
             type="file"
             accept="image/*"
             className="hidden"
@@ -315,7 +326,7 @@ export default function EnhanceClient() {
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground">
+            <div className="text-muted-foreground flex flex-wrap items-center justify-between gap-2 text-xs">
               <div>
                 {meta ? (
                   <>
@@ -360,7 +371,7 @@ export default function EnhanceClient() {
             {status === 'failed' ? (
               <button
                 onClick={startJob}
-                className="w-full rounded-xl border px-4 py-2 text-sm font-semibold transition hover:bg-muted/30"
+                className="hover:bg-muted/30 w-full rounded-xl border px-4 py-2 text-sm font-semibold transition"
               >
                 Retry
               </button>
@@ -378,11 +389,15 @@ export default function EnhanceClient() {
         </div>
 
         {showProgress ? (
-          <div className="absolute inset-0 flex items-center justify-center bg-background/70 backdrop-blur-sm">
-            <div className="w-full max-w-sm rounded-2xl border bg-background/90 p-5">
+          <div className="bg-background/70 absolute inset-0 flex items-center justify-center backdrop-blur-sm">
+            <div className="bg-background/90 w-full max-w-sm rounded-2xl border p-5">
               <div className="text-sm font-semibold">Enhancing…</div>
               <div className="text-muted-foreground mt-1 text-xs">
-                {status === 'queued' ? 'Queued…' : 'Processing…'}
+                {status === 'queued'
+                  ? 'Queued…'
+                  : status === 'done' && !afterUrl
+                    ? 'Finalizing result…'
+                    : 'Processing…'}
               </div>
               <div className="bg-muted/30 mt-4 h-2 w-full overflow-hidden rounded">
                 <div
@@ -395,19 +410,58 @@ export default function EnhanceClient() {
         ) : null}
 
         {showResult && afterUrl ? (
-          <div className="absolute inset-0 flex items-center justify-center bg-background/70 backdrop-blur-sm">
-            <div className="w-full max-w-5xl rounded-2xl border bg-background/95 p-4 md:p-6">
+          <div className="bg-background/70 absolute inset-0 flex items-center justify-center backdrop-blur-sm">
+            <div className="bg-background/95 w-full max-w-5xl rounded-2xl border p-4 md:p-6">
               <div className="mb-4 flex items-center justify-between">
                 <div className="text-sm font-semibold">Before / After</div>
-                <button
-                  onClick={() => setShowResult(false)}
-                  className="text-muted-foreground hover:text-foreground text-xs font-medium"
-                >
-                  Back to edit
-                </button>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => setShowResult(false)}
+                    className="border-border/70 bg-background/70 hover:bg-muted/40 focus-visible:ring-foreground/30 inline-flex h-10 items-center gap-2 rounded-lg border px-3 text-sm font-semibold transition focus-visible:ring-2 focus-visible:outline-none"
+                  >
+                    <PencilLine className="h-4 w-4" />
+                    Back to edit
+                  </button>
+                  <button
+                    onClick={async () => {
+                      try {
+                        const resp = await fetch(afterUrl, {
+                          cache: 'no-store',
+                        });
+                        if (!resp.ok) throw new Error('Download failed');
+
+                        const blob = await resp.blob();
+                        const ext = blob.type.includes('png')
+                          ? 'png'
+                          : blob.type.includes('jpeg')
+                            ? 'jpg'
+                            : blob.type.includes('webp')
+                              ? 'webp'
+                              : 'png';
+
+                        const objUrl = URL.createObjectURL(blob);
+
+                        const a = document.createElement('a');
+                        a.href = objUrl;
+                        a.download = `imghancer_${scale}x.${ext}`;
+                        document.body.appendChild(a);
+                        a.click();
+                        a.remove();
+
+                        URL.revokeObjectURL(objUrl);
+                      } catch (e) {
+                        window.open(afterUrl, '_blank', 'noopener,noreferrer');
+                      }
+                    }}
+                    className="bg-foreground text-background focus-visible:ring-foreground/40 inline-flex h-10 items-center gap-2 rounded-lg px-4 text-sm font-semibold transition hover:opacity-90 focus-visible:ring-2 focus-visible:outline-none"
+                  >
+                    <Download className="h-4 w-4" />
+                    Download
+                  </button>
+                </div>
               </div>
               <div className="grid gap-4 md:grid-cols-2">
-                <div className="rounded-xl border bg-muted/10 p-3">
+                <div className="bg-muted/10 rounded-xl border p-3">
                   <div className="text-muted-foreground text-xs">Before</div>
                   <div className="bg-background mt-2 overflow-hidden rounded-lg border">
                     {previewUrl ? (
@@ -424,46 +478,8 @@ export default function EnhanceClient() {
                     )}
                   </div>
                 </div>
-                <div className="rounded-xl border bg-muted/10 p-3">
-                  <div className="flex items-center justify-between">
-                    <div className="text-muted-foreground text-xs">After</div>
-                    <button
-                      onClick={async () => {
-                        try {
-                          const resp = await fetch(afterUrl, {
-                            cache: 'no-store',
-                          });
-                          if (!resp.ok) throw new Error('Download failed');
-
-                          const blob = await resp.blob();
-                          const ext =
-                            blob.type.includes('png')
-                              ? 'png'
-                              : blob.type.includes('jpeg')
-                                ? 'jpg'
-                                : blob.type.includes('webp')
-                                  ? 'webp'
-                                  : 'png';
-
-                          const objUrl = URL.createObjectURL(blob);
-
-                          const a = document.createElement('a');
-                          a.href = objUrl;
-                          a.download = `imghancer_${scale}x.${ext}`;
-                          document.body.appendChild(a);
-                          a.click();
-                          a.remove();
-
-                          URL.revokeObjectURL(objUrl);
-                        } catch (e) {
-                          window.open(afterUrl, '_blank', 'noopener,noreferrer');
-                        }
-                      }}
-                      className="hover:bg-muted/30 rounded-full border px-3 py-1 text-xs font-semibold transition"
-                    >
-                      Download
-                    </button>
-                  </div>
+                <div className="bg-muted/10 rounded-xl border p-3">
+                  <div className="text-muted-foreground text-xs">After</div>
                   <div className="bg-background mt-2 overflow-hidden rounded-lg border">
                     {afterUrl ? (
                       // eslint-disable-next-line @next/next/no-img-element

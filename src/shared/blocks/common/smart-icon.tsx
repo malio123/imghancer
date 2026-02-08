@@ -11,6 +11,25 @@ function detectIconLibrary(name: string): 'ri' | 'lucide' {
   return 'lucide';
 }
 
+function toPascalCase(name: string) {
+  return name
+    .trim()
+    .replace(/[-_\s]+(.)?/g, (_, ch: string) => (ch ? ch.toUpperCase() : ''))
+    .replace(/^(.)/, (_, ch: string) => ch.toUpperCase());
+}
+
+function resolveLucideIcon(
+  module: Record<string, unknown>,
+  name: string
+): ComponentType<any> | null {
+  const candidates = [name, toPascalCase(name)];
+  for (const key of candidates) {
+    const icon = module[key as keyof typeof module];
+    if (icon) return icon as ComponentType<any>;
+  }
+  return null;
+}
+
 export function SmartIcon({
   name,
   size = 24,
@@ -53,7 +72,7 @@ export function SmartIcon({
       iconCache[cacheKey] = lazy(async () => {
         try {
           const module = await import('lucide-react');
-          const IconComponent = module[name as keyof typeof module];
+          const IconComponent = resolveLucideIcon(module, name);
           if (IconComponent) {
             return { default: IconComponent as ComponentType<any> };
           } else {
